@@ -1,0 +1,49 @@
+muziek_beneden:
+  name: Muziek beneden
+  entities:
+    - media_player.woonkamer
+    - media_player.keuken
+
+verlichting_dakterras:
+  name: Verlichting dakterras
+  entities:
+    - light.hue_calla_linksvoor
+    - light.hue_calla_rechtsvoor
+    - light.hue_calla_linksachter
+    - light.hue_calla_rechtsachter
+
+wandlampen_bank_onderkant:
+  name: Wandlampen bank onderkant
+  entities:
+    - light.wandlamp_bank_1
+    - light.wandlamp_bank_2
+    - light.wandlamp_bank_3
+
+wandlampen_bank_bovenkant:
+  name: Wandlampen bank bovenkant
+  entities:
+    - light.wandlamp_bank_4
+    - light.wandlamp_bank_5
+    - light.wandlamp_bank_6
+
+spotjes_overloop:
+  name: Spotjes overloop
+  entities:
+    - light.spot_overloop_2
+    - light.spot_overloop_1
+
+alle_verlichting_beneden:
+  name: Verlichting benedenverdieping
+  entities:
+    - light.ledstrip_bank
+    - light.lamp_televisie
+    - light.spot_eetkamer_1
+    - light.spot_eetkamer_2
+    - light.spot_eetkamer_3
+    - light.spot_eetkamer_4
+    - light.lamp_eettafel_1
+    - light.lamp_eettafel_2
+    - light.lamp_eettafel_3
+    - light.spot_keuken_links
+    - light.spot_keuken_rechts
+    - switch.tuinverlichting

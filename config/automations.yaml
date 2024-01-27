@@ -1,0 +1,273 @@
+- id: '1583419654180'
+  alias: Mindergas Upload
+  description: Upload meterstand naar mindergas.nl
+  trigger:
+  - at: 00:30
+    platform: time
+  condition: []
+  action:
+  - data_template:
+      date: '{{ (as_timestamp(now()) - (24*3600)) | timestamp_custom("%Y-%m-%d", True)}}'
+      reading: '{{ states.sensor.gas_consumption.state }}'
+    service: rest_command.mindergas_upload
+- id: '1637394035116'
+  alias: Bijna thuis
+  description: ''
+  trigger:
+  - platform: zone
+    entity_id: person.miranda
+    zone: zone.hartog
+    event: enter
+  condition:
+  - condition: zone
+    entity_id: person.danny
+    zone: zone.home
+  action:
+  - service: notify.mobile_app_iphone_van_danny
+    data:
+      message: Miranda is de snelweg af en nu bij Hartog
+      title: Bijna thuis
+  mode: single
+- id: '1656415779959'
+  alias: Irrigatiesysteem
+  description: ''
+  trigger:
+  - platform: time
+    at: 04:00:00
+  condition:
+  - condition: and
+    conditions:
+    - condition: numeric_state
+      entity_id: sensor.smart_irrigation_daily_adjusted_run_time
+      above: '0'
+    - condition: numeric_state
+      entity_id: sensor.smart_irrigation_hourly_adjusted_run_time
+      above: '0'
+    - condition: time
+      weekday:
+      - sun
+      - tue
+      - thu
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.irrigatiesysteem
+  - delay:
+      seconds: '{{states("sensor.smart_irrigation_daily_adjusted_run_time")}}'
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.irrigatiesysteem
+  - service: smart_irrigation.smart_irrigation_reset_bucket
+    data: {}
+  mode: single
+- id: '1664107646417'
+  alias: Miranda vertrekt vanaf kantoor
+  description: ''
+  trigger:
+  - platform: geo_location
+    source: person.miranda
+    zone: zone.ef
+    event: leave
+  condition:
+  - condition: zone
+    entity_id: person.danny
+    zone: zone.home
+  action:
+  - service: notify.mobile_app_iphone_van_danny
+    data:
+      message: Miranda vertrekt nu vanaf kantoor
+  mode: single
+- id: '1668245741807'
+  alias: Zet Denon automatisch aan na mute
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - media_player.keuken
+    attribute: is_volume_muted
+    from: 'true'
+    to: 'false'
+  condition: []
+  action:
+  - service: media_player.media_play
+    data: {}
+    target:
+      entity_id: media_player.denon_home_150
+  mode: single
+- id: '1670784986954'
+  alias: iOS actie - LMS volume 25%
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: Volume laag
+  condition: []
+  action:
+  - service: media_player.volume_set
+    data:
+      volume_level: 0.25
+    target:
+      entity_id:
+      - media_player.woonkamer
+      - media_player.keuken
+  mode: single
+- id: '1670785053052'
+  alias: iOS actie - LMS volume 50%
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: Volume medium
+  condition: []
+  action:
+  - service: media_player.volume_set
+    data:
+      volume_level: 0.5
+    target:
+      entity_id:
+      - media_player.woonkamer
+      - media_player.keuken
+  mode: single
+- id: '1670785093454'
+  alias: iOS actie - LMS volume 80%
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: Volume hoog
+  condition: []
+  action:
+  - service: media_player.volume_set
+    data:
+      volume_level: 0.8
+    target:
+      entity_id:
+      - media_player.woonkamer
+      - media_player.keuken
+  mode: single
+- id: '1704556326711'
+  alias: Verlichting beneden aan
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - light.verlichting_eetkamer
+    - light.verlichting_bank
+    - light.verlichting_keuken
+    - light.lamp_televisie
+    - light.verlichting_eettafel
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: input_boolean.verlichting_beneden
+  mode: single
+- id: '1704556378278'
+  alias: Verlichting beneden uit
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - light.verlichting_eetkamer
+    - light.verlichting_bank_bovenkant
+    - light.verlichting_keuken
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id:
+      - input_boolean.verlichting_beneden
+    data: {}
+  mode: single
+- id: '1704569333318'
+  alias: Home Cinema aan
+  description: En radio starten als activiteit
+  trigger: []
+  condition: []
+  action:
+  - service: switch.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.home_cinema
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 3
+      milliseconds: 0
+  - service: remote.turn_on
+    metadata: {}
+    data:
+      activity: Radio
+    target:
+      entity_id: remote.woonkamer
+  mode: single
+- id: '1704569399063'
+  alias: Home Cinema uit
+  description: En radio starten als activiteit
+  trigger: []
+  condition: []
+  action:
+  - service: remote.turn_off
+    target:
+      entity_id:
+      - remote.woonkamer
+    data: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 3
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.home_cinema
+    data: {}
+  mode: single
+- id: '1705836713686'
+  alias: Display popup when doorbell is ringing
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.deurbel_ringing
+    to: 'on'
+  condition: []
+  action:
+  - device_id: 314e7f45026050001b7829e0cad7d55b
+    domain: button
+    entity_id: 0f8857bc8a19f416a941de7da6f9463e
+    type: press
+  - service: browser_mod.popup
+    target:
+      device_id: c2623bbee2226a47f09d6befe07a40ca
+    data:
+      dismissable: true
+      autoclose: false
+      timeout: 15000
+      content:
+        type: custom:webrtc-camera
+        entity: camera.deurbel_2
+        poster: https://ha.ebooz.nl/local/pictures/eufy_loading.png
+        ui: false
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 15
+      milliseconds: 0
+  - device_id: 314e7f45026050001b7829e0cad7d55b
+    domain: button
+    entity_id: 18b7a97114eb91ff545eef1c71a7c26b
+    type: press
+  mode: single

@@ -1,0 +1,1744 @@
+wallpanel:
+  enabled: true
+  hide_toolbar: true
+  hide_sidebar: true
+  fullscreen: true
+  idle_time: 0
+views:
+  - title: Beneden
+    type: panel
+    path: beneden
+    badges: []
+    cards:
+      - type: picture-elements
+        entity: sun.sun
+        state_image:
+          above_horizon: /local/pictures/floorplan/00_day.png
+          below_horizon: /local/pictures/floorplan/00_night.png
+        elements:
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                entity: light.lamp_televisie
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_tv.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                entity: light.verlichting_bank_bovenkant
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_couch.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                entity: light.verlichting_eetkamer
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_diningroom_.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                entity: light.verlichting_eettafel
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_diningtable.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                entity: light.verlichting_keuken
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_kichen.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                entity: light.verlichting_keuken
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_all.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+              - entity: switch.festivalverlichting
+                state: 'off'
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                entity: switch.tuinverlichting
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_garden.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                entity: light.lamp_gang
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_entrance.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: light.lamp_toilet
+                state: 'on'
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                entity: light.lamp_toilet
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_toilet.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: light.spotjes_voorraadkast
+                state: 'on'
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                entity: light.spotjes_voorraadkast
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_pantry.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                entity: light.spot_trap
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_stairs.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                entity: switch.festivalverlichting
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/00_night_light_festival.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: image
+            tap_action:
+              action: toggle
+            hold_action:
+              action: none
+            double_tap_action:
+              action: call-service
+              service: input_boolean.toggle
+              target:
+                entity_id: input_boolean.verlichting_beneden
+            entity: light.lamp_televisie
+            style:
+              top: 38%
+              left: 88%
+              width: 3%
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_lamp_televisie.png
+              'off': /local/pictures/floorplan/buttons/04_lamp_televisie.png
+          - type: image
+            tap_action:
+              action: toggle
+            hold_action:
+              action: none
+            double_tap_action:
+              action: call-service
+              service: input_boolean.toggle
+              target:
+                entity_id: input_boolean.verlichting_beneden
+            entity: light.verlichting_bank
+            style:
+              top: 65%
+              left: 80%
+              width: 23%
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_bank.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_bank.png
+          - type: image
+            tap_action:
+              action: toggle
+            hold_action:
+              action: none
+            double_tap_action:
+              action: call-service
+              service: input_boolean.toggle
+              target:
+                entity_id: input_boolean.verlichting_beneden
+            entity: light.verlichting_bank
+            style:
+              top: 62%
+              left: 78%
+              width: 20%
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_bank.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_bank.png
+          - type: image
+            tap_action:
+              action: toggle
+            hold_action:
+              action: none
+            double_tap_action:
+              action: call-service
+              service: input_boolean.toggle
+              target:
+                entity_id: input_boolean.verlichting_beneden
+            entity: light.verlichting_eetkamer
+            style:
+              top: 50%
+              left: 53%
+              width: 18%
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_eetkamer.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_eetkamer.png
+          - type: image
+            tap_action:
+              action: toggle
+            hold_action:
+              action: none
+            double_tap_action:
+              action: call-service
+              service: input_boolean.toggle
+              target:
+                entity_id: input_boolean.verlichting_beneden
+            entity: light.verlichting_eettafel
+            style:
+              top: 59%
+              left: 53%
+              width: 10%
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_eettafel.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_eettafel.png
+          - type: image
+            tap_action:
+              action: toggle
+            hold_action:
+              action: none
+            double_tap_action:
+              action: call-service
+              service: input_boolean.toggle
+              target:
+                entity_id: input_boolean.verlichting_beneden
+            entity: light.verlichting_keuken
+            style:
+              top: 40%
+              left: 44%
+              width: 22%
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_keuken.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_keuken.png
+          - type: image
+            tap_action:
+              action: toggle
+            hold_action:
+              action: none
+            double_tap_action:
+              action: none
+            entity: light.lamp_gang
+            style:
+              top: 30%
+              left: 83%
+              width: 6%
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_lamp_gang.png
+              'off': /local/pictures/floorplan/buttons/04_lamp_gang.png
+          - type: image
+            tap_action:
+              action: toggle
+            hold_action:
+              action: none
+            double_tap_action:
+              action: none
+            entity: light.lamp_toilet
+            style:
+              top: 30%
+              left: 25%
+              width: 7%
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_lamp_toilet.png
+              'off': /local/pictures/floorplan/buttons/04_lamp_toilet.png
+          - type: image
+            tap_action:
+              action: toggle
+            hold_action:
+              action: none
+            double_tap_action:
+              action: none
+            entity: light.spotjes_voorraadkast
+            style:
+              top: 40%
+              left: 61%
+              width: 7%
+              '--divider-color': none
+            state_image:
+              'on': >-
+                /local/pictures/floorplan/buttons/04_verlichting_voorraadkast.png
+              'off': >-
+                /local/pictures/floorplan/buttons/04_verlichting_voorraadkast.png
+          - type: image
+            tap_action:
+              action: toggle
+            hold_action:
+              action: none
+            double_tap_action:
+              action: none
+            entity: light.spot_trap
+            style:
+              top: 30%
+              left: 62%
+              width: 7%
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_spot_trap.png
+              'off': /local/pictures/floorplan/buttons/04_spot_trap.png
+          - type: image
+            tap_action:
+              action: toggle
+            hold_action:
+              action: none
+            double_tap_action:
+              action: call-service
+              service: switch.toggle
+              target:
+                entity_id: switch.festivalverlichting
+            entity: switch.tuinverlichting
+            style:
+              top: 60%
+              left: 20%
+              width: 25%
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_tuin.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_tuin.png
+          - type: conditional
+            conditions:
+              - entity: switch.home_cinema
+                state: 'off'
+            elements:
+              - type: image
+                tap_action:
+                  action: call-service
+                  service: automation.trigger
+                  target:
+                    entity_id: automation.home_cinema_aan
+                hold_action:
+                  action: none
+                double_tap_action:
+                  action: call-service
+                  service: browser_mod.popup
+                  data:
+                    autoclose: false
+                    content:
+                      type: vertical-stack
+                      cards:
+                        - type: horizontal-stack
+                          cards:
+                            - type: custom:mushroom-entity-card
+                              entity: remote.woonkamer
+                              name: Harmony
+                              double_tap_action:
+                                action: more-info
+                              tap_action:
+                                action: toggle
+                              hold_action:
+                                action: more-info
+                            - type: custom:mushroom-entity-card
+                              entity: switch.woonkamer_appletv
+                              name: Apple TV
+                              icon: mdi:apple
+                              tap_action:
+                                action: toggle
+                            - type: custom:mushroom-entity-card
+                              entity: switch.woonkamer_radio
+                              name: Radio
+                              icon: mdi:radio
+                              tap_action:
+                                action: toggle
+                        - type: custom:mini-media-player
+                          entity: media_player.keuken
+                          name: SqueezeBox
+                          hide:
+                            power: true
+                            icon: true
+                            source: true
+                          speaker_group:
+                            platform: squeezebox
+                            show_group_count: false
+                            sync_volume: true
+                            entities:
+                              - entity_id: media_player.woonkamer
+                                name: Woonkamer
+                              - entity_id: media_player.keuken
+                                name: Keuken
+                          sound_mode: full
+                          info: scroll
+                    title: Home Cinema
+                  target:
+                    device_id: c2623bbee2226a47f09d6befe07a40ca
+                entity: switch.home_cinema
+                style:
+                  top: 38%
+                  left: 81%
+                  width: 7%
+                state_image:
+                  'on': /local/pictures/floorplan/buttons/04_home_cinema.png
+                  'off': /local/pictures/floorplan/buttons/04_home_cinema.png
+          - type: conditional
+            conditions:
+              - entity: switch.home_cinema
+                state: 'on'
+            elements:
+              - type: image
+                double_tap_action:
+                  action: call-service
+                  service: automation.trigger
+                  target:
+                    entity_id: automation.home_cinema_uit
+                hold_action:
+                  action: none
+                tap_action:
+                  action: call-service
+                  service: browser_mod.popup
+                  data:
+                    autoclose: false
+                    content:
+                      type: vertical-stack
+                      cards:
+                        - type: horizontal-stack
+                          cards:
+                            - type: custom:mushroom-entity-card
+                              entity: remote.woonkamer
+                              name: Harmony
+                              double_tap_action:
+                                action: more-info
+                              tap_action:
+                                action: toggle
+                              hold_action:
+                                action: more-info
+                            - type: custom:mushroom-entity-card
+                              entity: switch.woonkamer_appletv
+                              name: Apple TV
+                              icon: mdi:apple
+                              tap_action:
+                                action: toggle
+                            - type: custom:mushroom-entity-card
+                              entity: switch.woonkamer_radio
+                              name: Radio
+                              icon: mdi:radio
+                              tap_action:
+                                action: toggle
+                        - type: custom:mini-media-player
+                          entity: media_player.keuken
+                          name: SqueezeBox
+                          hide:
+                            power: true
+                            icon: true
+                            source: true
+                          speaker_group:
+                            platform: squeezebox
+                            show_group_count: false
+                            sync_volume: true
+                            entities:
+                              - entity_id: media_player.woonkamer
+                                name: Woonkamer
+                              - entity_id: media_player.keuken
+                                name: Keuken
+                          sound_mode: full
+                          info: scroll
+                    title: Home Cinema
+                  target:
+                    device_id: c2623bbee2226a47f09d6befe07a40ca
+                entity: switch.home_cinema
+                style:
+                  top: 38%
+                  left: 81%
+                  width: 7%
+                state_image:
+                  'on': /local/pictures/floorplan/buttons/04_home_cinema.png
+                  'off': /local/pictures/floorplan/buttons/04_home_cinema.png
+          - type: image
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              data:
+                autoclose: false
+                content:
+                  type: custom:mushroom-cover-card
+                  entity: cover.jaloezieen_woonkamer
+                  show_name: false
+                  show_position_control: true
+                  show_tilt_position_control: false
+                  show_buttons_control: false
+                  fill_container: false
+                  color: white
+                title: Jaloezieën woonkamer
+              target:
+                device_id: c2623bbee2226a47f09d6befe07a40ca
+            hold_action:
+              action: none
+            double_tap_action:
+              action: none
+            image: /local/pictures/floorplan/buttons/04_jaloezieen.png
+            style:
+              top: 47%
+              left: 93%
+              width: 6%
+          - type: image
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              data:
+                autoclose: false
+                content:
+                  type: custom:mushroom-cover-card
+                  entity: cover.jaloezieen_woonkamer
+                  show_name: false
+                  show_position_control: true
+                  show_tilt_position_control: false
+                  show_buttons_control: false
+                  fill_container: false
+                title: Jaloezieën woonkamer
+              target:
+                device_id: c2623bbee2226a47f09d6befe07a40ca
+            hold_action:
+              action: none
+            double_tap_action:
+              action: none
+            image: /local/pictures/floorplan/buttons/04_jaloezieen.png
+            style:
+              top: 59%
+              left: 93%
+              width: 6%
+          - type: custom:button-card
+            show_name: false
+            icon: mdi:smoke-detector-variant-alert
+            tap_action:
+              action: more-info
+            entity: binary_sensor.rookmelder_woonkamer
+            state:
+              - value: 'on'
+                color: red
+                spin: true
+                styles:
+                  icon:
+                    - animation: blink 1s ease infinite
+                    - filter: opacity(50%)
+              - value: 'off'
+                color: white
+                styles:
+                  icon:
+                    - filter: opacity(0%)
+            style:
+              top: 51%
+              left: 68%
+              width: 6%
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: image
+            tap_action:
+              action: none
+            image: /local/pictures/floorplan/buttons/nuts_test.png
+            style:
+              top: 23%
+              left: 85%
+              width: 6%
+          - type: state-label
+            tap_action:
+              action: none
+            entity: climate.gang
+            attribute: current_humidity
+            suffix: '%'
+            style:
+              top: 29.1%
+              left: 70.8%
+              font-size: 8px
+              color: white
+          - type: state-label
+            tap_action:
+              action: more-info
+            entity: climate.gang
+            attribute: current_temperature
+            suffix: °C
+            style:
+              top: 27.8%
+              left: 71%
+              font-size: 12px
+              font-weight: bold
+              color: white
+          - type: state-label
+            tap_action:
+              action: more-info
+            entity: sensor.woonkamer_luchtvochtigheid
+            style:
+              top: 43.5%
+              left: 80.3%
+              font-size: 8px
+              color: white
+          - type: state-label
+            tap_action:
+              action: none
+            entity: sensor.lichtsensor_woonkamer
+            style:
+              top: 44.7%
+              left: 80.3%
+              font-size: 8px
+              color: white
+          - type: state-label
+            tap_action:
+              action: more-info
+            entity: climate.woonkamer
+            attribute: current_temperature
+            suffix: °C
+            style:
+              top: 42%
+              left: 81%
+              font-size: 12px
+              font-weight: bold
+              color: white
+          - type: state-label
+            tap_action:
+              action: more-info
+            entity: sensor.eetkamer_temperatuur
+            style:
+              top: 50%
+              left: 54%
+              font-size: 12px
+              font-weight: bold
+              color: white
+          - type: state-label
+            tap_action:
+              action: more-info
+            entity: sensor.eetkamer_luchtvochtigheid
+            style:
+              top: 51.5%
+              left: 53.2%
+              font-size: 8px
+              color: white
+          - type: state-label
+            tap_action:
+              action: more-info
+            entity: sensor.lichtsensor_keuken
+            style:
+              top: 44%
+              left: 39%
+              font-size: 8px
+              color: white
+          - type: state-label
+            tap_action:
+              action: more-info
+            entity: sensor.bijkeuken_temperatuur
+            style:
+              top: 37%
+              left: 18%
+              font-size: 12px
+              font-weight: bold
+              color: white
+          - type: state-label
+            tap_action:
+              action: more-info
+            entity: sensor.bijkeuken_luchtvochtigheid
+            style:
+              top: 38.5%
+              left: 17.5%
+              font-size: 8px
+              color: white
+          - type: custom:button-card
+            show_name: false
+            icon: mdi:coffee-maker-outline
+            tap_action:
+              action: more-info
+            entity: switch.koffiezetapparaat
+            state:
+              - value: 'on'
+                color: white
+                styles:
+                  icon:
+                    - filter: opacity(0%)
+              - value: 'off'
+                color: red
+                styles:
+                  icon:
+                    - filter: opacity(50%)
+            style:
+              top: 32%
+              left: 39.5%
+              width: 4%
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: icon
+            icon: mdi:transmission-tower
+            style:
+              top: 17.5%
+              left: 81%
+              transform: scale(0.5,0.5)
+              color: white
+          - type: icon
+            icon: mdi:water
+            style:
+              top: 21.5%
+              left: 87.5%
+              transform: scale(0.5,0.5)
+              color: white
+          - type: icon
+            icon: mdi:fire
+            style:
+              top: 21.5%
+              left: 80%
+              transform: scale(0.5,0.5)
+              color: white
+          - type: state-label
+            tap_action:
+              action: none
+            entity: sensor.stroomverbruik
+            style:
+              top: 19%
+              left: 85%
+              font-size: 8px
+              color: white
+          - type: state-label
+            tap_action:
+              action: none
+            entity: sensor.gasverbruik
+            style:
+              top: 23%
+              left: 79%
+              font-size: 8px
+              color: white
+          - type: state-label
+            tap_action:
+              action: none
+            entity: sensor.waterverbruik
+            style:
+              top: 23%
+              left: 90%
+              font-size: 8px
+              color: white
+          - type: icon
+            icon: mdi:car-hatchback
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              data:
+                dismissable: true
+                autoclose: false
+                content:
+                  type: iframe
+                  url: >-
+                    https://chargepoints.eco-movement.com/widget/500/600/key/52.7734339/5.1043484/15
+                  aspect_ratio: 80%
+                title: Laadpalen
+              target:
+                device_id: c2623bbee2226a47f09d6befe07a40ca
+            hold_action:
+              action: none
+            double_tap_action:
+              action: none
+            style:
+              top: 2%
+              left: 23%
+              transform: scale(0.6,0.6)
+              color: white
+          - type: state-label
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              data:
+                dismissable: true
+                autoclose: false
+                content:
+                  type: iframe
+                  url: >-
+                    https://chargepoints.eco-movement.com/widget/500/600/key/52.7734339/5.1043484/15
+                  aspect_ratio: 80%
+                title: Laadpalen
+              target:
+                device_id: c2623bbee2226a47f09d6befe07a40ca
+            hold_action:
+              action: none
+            double_tap_action:
+              action: none
+            entity: sensor.tronity_q4_e_tron_level
+            style:
+              top: 3.6%
+              left: 26.5%
+              font-size: 10px
+              text-align: start
+              color: white
+          - type: icon
+            icon: mdi:ev-station
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              data:
+                dismissable: true
+                autoclose: false
+                content:
+                  type: iframe
+                  url: >-
+                    https://chargepoints.eco-movement.com/widget/500/600/key/52.7734339/5.1043484/15
+                  aspect_ratio: 80%
+                title: Laadpalen
+              target:
+                device_id: c2623bbee2226a47f09d6befe07a40ca
+            hold_action:
+              action: none
+            double_tap_action:
+              action: none
+            style:
+              top: 4.5%
+              left: 23%
+              transform: scale(0.6,0.6)
+              color: white
+          - type: state-label
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              data:
+                dismissable: true
+                autoclose: false
+                content:
+                  type: iframe
+                  url: >-
+                    https://chargepoints.eco-movement.com/widget/500/600/key/52.7734339/5.1043484/15
+                  aspect_ratio: 80%
+                title: Laadpalen
+              target:
+                device_id: c2623bbee2226a47f09d6befe07a40ca
+            hold_action:
+              action: none
+            double_tap_action:
+              action: none
+            entity: sensor.tronity_q4_e_tron_range
+            style:
+              top: 6%
+              left: 27%
+              font-size: 10px
+              color: white
+          - type: conditional
+            conditions:
+              - entity: sensor.tronity_q4_e_tron_plugged
+                state: 'True'
+            elements:
+              - type: icon
+                icon: mdi:battery-charging
+                style:
+                  top: 7%
+                  left: 23%
+                  transform: scale(0.6,0.6)
+                  color: white
+              - type: state-label
+                tap_action:
+                  action: none
+                entity: sensor.tronity_q4_e_tron_charging
+                style:
+                  top: 8.5%
+                  left: 27.3%
+                  font-size: 10px
+                  color: white
+              - type: icon
+                icon: mdi:flash
+                style:
+                  top: 9.5%
+                  left: 23%
+                  transform: scale(0.6,0.6)
+                  color: white
+              - type: state-label
+                tap_action:
+                  action: none
+                entity: sensor.tronity_q4_e_tron_chargerpower
+                style:
+                  top: 11%
+                  left: 27%
+                  font-size: 10px
+                  color: white
+              - type: icon
+                icon: mdi:progress-clock
+                style:
+                  top: 12%
+                  left: 23%
+                  transform: scale(0.6,0.6)
+                  color: white
+              - type: state-label
+                tap_action:
+                  action: none
+                entity: sensor.tronity_q4_e_tron_chargeremainingtime
+                style:
+                  top: 13.5%
+                  left: 27%
+                  font-size: 10px
+                  color: white
+          - type: custom:clock-weather-card
+            tap_action:
+              action: none
+            entity: weather.thuis
+            hide_today_section: false
+            hide_forecast_section: true
+            hide_clock: false
+            hide_date: true
+            style:
+              top: 10%
+              left: 82%
+              width: 40%
+              color: white
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: custom:clock-weather-card
+            tap_action:
+              action: none
+            entity: weather.thuis
+            hide_today_section: true
+            hide_forecast_section: false
+            hide_clock: true
+            hide_date: true
+            card_mod:
+              style: |
+                forecast-temperature-bar {
+                  height: 18% !important;
+                  opacity: 0.9 !important;
+                  }
+            style:
+              top: 84%
+              left: 17%
+              width: 280px
+              color: white
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: custom:neerslag-card
+            tap_action:
+              action: none
+            entity: sensor.neerslag_buienalarm_regen_data
+            autozoom: true
+            card_mod:
+              style: |
+                forecast-temperature-bar {
+                  height: 18% !important;
+                  opacity: 0.9 !important;
+                  }
+            style:
+              top: 87%
+              left: 54%
+              width: 40%
+              color: white
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: icon
+            icon: mdi:sofa-outline
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace-plattegrond/beneden
+            style:
+              top: 5%
+              left: 5%
+              border: 2px solid
+              color: white
+          - type: icon
+            icon: mdi:bed-outline
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace-plattegrond/boven
+            style:
+              top: 5%
+              left: 10%
+              border: 2px solid
+              color: white
+          - type: icon
+            icon: mdi:home-roof
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace-plattegrond/dakterras
+            style:
+              top: 5%
+              left: 15%
+              border: 2px solid
+              color: white
+  - title: Boven
+    path: boven
+    type: panel
+    badges: []
+    cards:
+      - type: picture-elements
+        entity: sun.sun
+        state_image:
+          above_horizon: /local/pictures/floorplan/10_day.png
+          below_horizon: /local/pictures/floorplan/10_night.png
+        elements:
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                entity: group.spotjes_overloop
+                tap_action:
+                  action: none
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/10_night_light_landing.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                entity: light.shelly_1_cv_ruimte
+                tap_action:
+                  action: none
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/10_night_light_cv.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                entity: light.bedverlichting
+                tap_action:
+                  action: none
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/10_night_light_bedlights.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                entity: light.spotjes_slaapkamer
+                tap_action:
+                  action: none
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/10_night_light_bedroom.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                entity: light.shelly_dimmer_2_logeerkamer
+                tap_action:
+                  action: none
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/10_night_light_guestroom.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                entity: light.shelly_dimmer_2_werkplek
+                tap_action:
+                  action: none
+                double_tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/10_night_light_homeoffice.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: image
+            tap_action:
+              action: toggle
+            double_tap_action:
+              action: none
+            entity: light.shelly_dimmer_2_logeerkamer
+            style:
+              top: 56%
+              left: 32%
+              width: 200px
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_logeerkamer.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_logeerkamer.png
+          - type: custom:button-card
+            show_name: false
+            icon: mdi:smoke-detector-variant-alert
+            tap_action:
+              action: more-info
+            entity: binary_sensor.rookmelder_boven
+            state:
+              - value: 'on'
+                color: red
+                spin: true
+                styles:
+                  icon:
+                    - animation: blink 1s ease infinite
+                    - filter: opacity(50%)
+              - value: 'off'
+                color: white
+                styles:
+                  icon:
+                    - filter: opacity(0%)
+            style:
+              top: 38%
+              left: 46%
+              width: 6%
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: image
+            tap_action:
+              action: more-info
+            double_tap_action:
+              action: none
+            entity: group.spotjes_overloop
+            style:
+              top: 38%
+              left: 46%
+              width: 180px
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_overloop.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_overloop.png
+          - type: image
+            tap_action:
+              action: toggle
+            double_tap_action:
+              action: none
+            entity: light.shelly_dimmer_2_werkplek
+            style:
+              top: 33%
+              left: 29%
+              width: 60px
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_werkplek.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_werkplek.png
+          - type: image
+            tap_action:
+              action: toggle
+            double_tap_action:
+              action: none
+            entity: light.spotjes_slaapkamer
+            style:
+              top: 40%
+              left: 67%
+              width: 166px
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_bedroom.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_bedroom.png
+          - type: image
+            tap_action:
+              action: toggle
+            double_tap_action:
+              action: none
+            entity: light.bedverlichting
+            style:
+              top: 58%
+              left: 67%
+              width: 200px
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_bedlights.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_bedlights.png
+          - type: image
+            tap_action:
+              action: toggle
+            double_tap_action:
+              action: none
+            entity: light.shelly_1_cv_ruimte
+            style:
+              top: 27%
+              left: 52%
+              width: 85px
+              '--divider-color': none
+            state_image:
+              'on': /local/pictures/floorplan/buttons/04_verlichting_cv.png
+              'off': /local/pictures/floorplan/buttons/04_verlichting_cv.png
+          - type: state-label
+            tap_action:
+              action: more-info
+            entity: sensor.mi_air_purifier_3_3h_pm2_5
+            style:
+              top: 36%
+              left: 65.7%
+              font-size: 7px
+              color: white
+          - type: state-label
+            tap_action:
+              action: none
+            entity: sensor.slaapkamer_luchtvochtigheid
+            style:
+              top: 34.7%
+              left: 65.5%
+              font-size: 8px
+              color: white
+          - type: state-label
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              data:
+                autoclose: false
+                content:
+                  type: thermostat
+                  entity: climate.slaapkamer
+              title: Thermostaat
+              target:
+                device_id: c2623bbee2226a47f09d6befe07a40ca
+            entity: sensor.slaapkamertemperatuur
+            style:
+              top: 33%
+              left: 66%
+              font-size: 12px
+              font-weight: bold
+              color: white
+          - type: state-label
+            tap_action:
+              action: more-info
+            entity: sensor.lichtsensor_boven
+            style:
+              top: 36%
+              left: 29.5%
+              font-size: 7px
+              color: white
+          - type: state-label
+            tap_action:
+              action: none
+            entity: sensor.werkplek_humidity
+            style:
+              top: 34.7%
+              left: 29.5%
+              font-size: 8px
+              color: white
+          - type: state-label
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              data:
+                autoclose: false
+                content:
+                  type: thermostat
+                  entity: climate.werkplek
+              title: Thermostaat
+              target:
+                device_id: c2623bbee2226a47f09d6befe07a40ca
+            entity: sensor.werkplek_temperatuur
+            style:
+              top: 33%
+              left: 30%
+              font-size: 12px
+              font-weight: bold
+              color: white
+          - type: state-label
+            tap_action:
+              action: none
+            entity: sensor.badkamer_humidity
+            style:
+              top: 54.7%
+              left: 51.5%
+              font-size: 8px
+              color: white
+          - type: state-label
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              data:
+                autoclose: false
+                content:
+                  type: thermostat
+                  entity: climate.badkamer
+              title: Thermostaat
+              target:
+                device_id: c2623bbee2226a47f09d6befe07a40ca
+            entity: sensor.badkamertemperatuur
+            style:
+              top: 53%
+              left: 52%
+              font-size: 12px
+              font-weight: bold
+              color: white
+          - type: state-label
+            tap_action:
+              action: none
+            entity: sensor.logeerkamer_humidity
+            style:
+              top: 55.7%
+              left: 32.5%
+              font-size: 8px
+              color: white
+          - type: state-label
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              data:
+                autoclose: false
+                content:
+                  type: thermostat
+                  entity: climate.logeerkamer
+              title: Thermostaat
+              target:
+                device_id: c2623bbee2226a47f09d6befe07a40ca
+            entity: sensor.temperatuur_logeerkamer
+            style:
+              top: 54%
+              left: 33%
+              font-size: 12px
+              font-weight: bold
+              color: white
+          - type: custom:clock-weather-card
+            tap_action:
+              action: none
+            entity: weather.thuis
+            hide_today_section: false
+            hide_forecast_section: true
+            hide_clock: false
+            hide_date: true
+            style:
+              top: 10%
+              left: 82%
+              width: 40%
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: custom:clock-weather-card
+            tap_action:
+              action: none
+            entity: weather.thuis
+            hide_today_section: true
+            hide_forecast_section: false
+            hide_clock: true
+            hide_date: true
+            card_mod:
+              style: |
+                forecast-temperature-bar {
+                  height: 18% !important;
+                  opacity: 0.9 !important;
+                  }
+            style:
+              top: 84%
+              left: 17%
+              width: 280px
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: custom:neerslag-card
+            tap_action:
+              action: none
+            entity: sensor.neerslag_buienalarm_regen_data
+            autozoom: true
+            card_mod:
+              style: |
+                forecast-temperature-bar {
+                  height: 18% !important;
+                  opacity: 0.9 !important;
+                  }
+            style:
+              top: 87%
+              left: 54%
+              width: 40%
+              color: white
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: custom:button-card
+            show_name: false
+            icon: mdi:fan
+            tap_action:
+              action: toggle
+            entity: switch.badkamer_ventilator
+            state:
+              - value: 'on'
+                color: white
+                spin: true
+                styles:
+                  icon:
+                    - filter: opacity(50%)
+              - value: 'off'
+                color: white
+                spin: false
+                styles:
+                  icon:
+                    - filter: opacity(50%)
+            style:
+              top: 54.5%
+              left: 47%
+              width: 4%
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: custom:button-card
+            show_name: false
+            icon: mdi:heat-wave
+            tap_action:
+              action: more-info
+            entity: climate.ac_slaapkamer
+            state:
+              - value: heat
+                color: orange
+                styles:
+                  icon:
+                    - filter: opacity(50%)
+              - value: cool
+                styles:
+                  icon:
+                    - filter: opacity(50%)
+              - value: 'off'
+                styles:
+                  icon:
+                    - filter: opacity(0%)
+            style:
+              top: 60.5%
+              left: 68%
+              width: 6%
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: custom:button-card
+            show_name: false
+            icon: mdi:air-filter
+            tap_action:
+              action: more-info
+            entity: fan.mi_air_purifier_3_3h
+            state:
+              - value: 'on'
+                color: green
+                styles:
+                  icon:
+                    - filter: opacity(50%)
+              - value: 'off'
+                color: white
+                styles:
+                  icon:
+                    - filter: opacity(0%)
+            style:
+              top: 30%
+              left: 74.5%
+              width: 4%
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: icon
+            icon: mdi:sofa-outline
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace-plattegrond/beneden
+            style:
+              top: 5%
+              left: 5%
+              border: 2px solid
+              color: white
+          - type: icon
+            icon: mdi:bed-outline
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace-plattegrond/boven
+            style:
+              top: 5%
+              left: 10%
+              border: 2px solid
+              color: white
+          - type: icon
+            icon: mdi:home-roof
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace-plattegrond/dakterras
+            style:
+              top: 5%
+              left: 15%
+              border: 2px solid
+              color: white
+  - title: Dakterras
+    path: dakterras
+    type: panel
+    badges: []
+    cards:
+      - type: picture-elements
+        entity: sun.sun
+        state_image:
+          above_horizon: /local/pictures/floorplan/20_day.png
+          below_horizon: /local/pictures/floorplan/20_night.png
+        elements:
+          - type: conditional
+            conditions:
+              - entity: sun.sun
+                state: below_horizon
+            elements:
+              - type: image
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                entity: light.lamp_televisie
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                state_image:
+                  'on': /local/pictures/floorplan/20_night_hue.png
+                  'off': /local/pictures/floorplan/00_transparant.png
+          - type: custom:button-card
+            show_name: false
+            icon: mdi:cctv
+            styles:
+              icon:
+                - filter: opacity(50%)
+                - color: white
+            tap_action:
+              action: call-service
+              service: browser_mod.popup
+              data:
+                autoclose: false
+                content:
+                  type: picture-glance
+                  camera_view: live
+                  entities: []
+                  camera_image: camera.dakterras
+                  title: Dakterras
+                title: Dakterras
+              target:
+                device_id: c2623bbee2226a47f09d6befe07a40ca
+            style:
+              top: 30%
+              left: 27%
+              width: 4%
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: custom:clock-weather-card
+            tap_action:
+              action: none
+            entity: weather.thuis
+            hide_today_section: false
+            hide_forecast_section: true
+            hide_clock: false
+            hide_date: true
+            style:
+              top: 10%
+              left: 82%
+              width: 40%
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: custom:clock-weather-card
+            tap_action:
+              action: none
+            entity: weather.thuis
+            hide_today_section: true
+            hide_forecast_section: false
+            hide_clock: true
+            hide_date: true
+            card_mod:
+              style: |
+                forecast-temperature-bar {
+                  height: 18% !important;
+                  opacity: 0.9 !important;
+                  }
+            style:
+              top: 84%
+              left: 17%
+              width: 280px
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: custom:neerslag-card
+            tap_action:
+              action: none
+            entity: sensor.neerslag_buienalarm_regen_data
+            autozoom: true
+            card_mod:
+              style: |
+                forecast-temperature-bar {
+                  height: 18% !important;
+                  opacity: 0.9 !important;
+                  }
+            style:
+              top: 87%
+              left: 54%
+              width: 40%
+              color: white
+              '--ha-card-background': none
+              '--ha-card-border-width': 0px
+          - type: icon
+            icon: mdi:sofa-outline
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace-plattegrond/beneden
+            style:
+              top: 5%
+              left: 5%
+              border: 2px solid
+              color: white
+          - type: icon
+            icon: mdi:bed-outline
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace-plattegrond/boven
+            style:
+              top: 5%
+              left: 10%
+              border: 2px solid
+              color: white
+          - type: icon
+            icon: mdi:home-roof
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace-plattegrond/dakterras
+            style:
+              top: 5%
+              left: 15%
+              border: 2px solid
+              color: white

@@ -1,0 +1,13 @@
+empty_log:
+  alias: Clear log
+  sequence:
+  - service: shell_command.clear_log
+shutdown_raspberry_pi_woonkamer:
+  alias: Shutdown Raspberry Pi Woonkamer
+  sequence:
+  - service: ssh_command.exec_command
+    data:
+      host: 192.168.0.133
+      command: sudo shutdown now
+  mode: single
+  icon: mdi:raspberry-pi

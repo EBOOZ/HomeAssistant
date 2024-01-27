@@ -1,0 +1,977 @@
+- id: '1584519865932'
+  name: Dimmers normaal
+  entities:
+    light.lamp_eettafel_1:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 26
+      is_deconz_group: false
+      friendly_name: Lamp eettafel 1
+      supported_features: 40
+      icon: mdi:ceiling-light
+      state: 'on'
+    light.lamp_eettafel_2:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 26
+      is_deconz_group: false
+      friendly_name: Lamp eettafel 2
+      supported_features: 40
+      icon: mdi:ceiling-light
+      state: 'on'
+    light.lamp_televisie:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 64
+      is_deconz_group: false
+      friendly_name: Lamp televisie
+      supported_features: 40
+      icon: mdi:lamp
+      state: 'on'
+    light.spot_eetkamer_1:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 26
+      color_temp_kelvin: 2232
+      color_temp: 448
+      hs_color:
+      - 29.684
+      - 83.214
+      rgb_color:
+      - 255
+      - 147
+      - 42
+      xy_color:
+      - 0.576
+      - 0.388
+      is_deconz_group: false
+      friendly_name: Spot eetkamer 1
+      supported_features: 40
+      icon: mdi:spotlight-beam
+      state: 'on'
+    light.spot_eetkamer_2:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 26
+      color_temp_kelvin: 2232
+      color_temp: 448
+      hs_color:
+      - 29.684
+      - 83.214
+      rgb_color:
+      - 255
+      - 147
+      - 42
+      xy_color:
+      - 0.576
+      - 0.388
+      is_deconz_group: false
+      friendly_name: Spot eetkamer 2
+      supported_features: 40
+      icon: mdi:spotlight-beam
+      state: 'on'
+    light.spot_eetkamer_3:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 26
+      color_temp_kelvin: 2232
+      color_temp: 448
+      hs_color:
+      - 29.684
+      - 83.214
+      rgb_color:
+      - 255
+      - 147
+      - 42
+      xy_color:
+      - 0.576
+      - 0.388
+      is_deconz_group: false
+      friendly_name: Spot eetkamer 3
+      supported_features: 40
+      icon: mdi:spotlight-beam
+      state: 'on'
+    light.spot_eetkamer_4:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 26
+      color_temp_kelvin: 2232
+      color_temp: 448
+      hs_color:
+      - 29.684
+      - 83.214
+      rgb_color:
+      - 255
+      - 147
+      - 42
+      xy_color:
+      - 0.576
+      - 0.388
+      is_deconz_group: false
+      friendly_name: Spot eetkamer 4
+      supported_features: 40
+      icon: mdi:spotlight-beam
+      state: 'on'
+    light.lamp_eettafel_3:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 26
+      is_deconz_group: false
+      friendly_name: Lamp eettafel 3
+      supported_features: 40
+      state: 'on'
+    light.spot_keuken_links:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 64
+      color_temp_kelvin: 2202
+      color_temp: 454
+      hs_color:
+      - 29.79
+      - 84.553
+      rgb_color:
+      - 255
+      - 146
+      - 39
+      xy_color:
+      - 0.579
+      - 0.388
+      is_deconz_group: false
+      friendly_name: Spot keuken links
+      supported_features: 40
+      state: 'on'
+    light.spot_keuken_rechts:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 64
+      color_temp_kelvin: 2202
+      color_temp: 454
+      hs_color:
+      - 29.79
+      - 84.553
+      rgb_color:
+      - 255
+      - 146
+      - 39
+      xy_color:
+      - 0.579
+      - 0.388
+      is_deconz_group: false
+      friendly_name: Spot keuken rechts
+      supported_features: 40
+      state: 'on'
+    light.wandlamp_bank_1:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 3
+      color_temp_kelvin: 2732
+      color_temp: 366
+      hs_color:
+      - 28.327
+      - 64.71
+      rgb_color:
+      - 255
+      - 167
+      - 89
+      xy_color:
+      - 0.524
+      - 0.387
+      is_deconz_group: false
+      icon: mdi:lightbulb-spot
+      friendly_name: Wandlamp bank 1
+      supported_features: 40
+      state: 'on'
+    light.wandlamp_bank_2:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 3
+      color_temp_kelvin: 2732
+      color_temp: 366
+      hs_color:
+      - 28.327
+      - 64.71
+      rgb_color:
+      - 255
+      - 167
+      - 89
+      xy_color:
+      - 0.524
+      - 0.387
+      is_deconz_group: false
+      icon: mdi:lightbulb-spot
+      friendly_name: Wandlamp bank 2
+      supported_features: 40
+      state: 'on'
+    light.wandlamp_bank_3:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 3
+      color_temp_kelvin: 2732
+      color_temp: 366
+      hs_color:
+      - 28.327
+      - 64.71
+      rgb_color:
+      - 255
+      - 167
+      - 89
+      xy_color:
+      - 0.524
+      - 0.387
+      is_deconz_group: false
+      icon: mdi:lightbulb-spot
+      friendly_name: Wandlamp bank 3
+      supported_features: 40
+      state: 'on'
+    light.wandlamp_bank_4:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: color_temp
+      brightness: 191
+      color_temp_kelvin: 2288
+      color_temp: 437
+      hs_color:
+      - 29.496
+      - 80.799
+      rgb_color:
+      - 255
+      - 150
+      - 48
+      xy_color:
+      - 0.57
+      - 0.389
+      is_deconz_group: false
+      icon: mdi:lightbulb-spot
+      friendly_name: Wandlamp bank 4
+      supported_features: 44
+      state: 'on'
+    light.wandlamp_bank_5:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: color_temp
+      brightness: 191
+      color_temp_kelvin: 2288
+      color_temp: 437
+      hs_color:
+      - 29.496
+      - 80.799
+      rgb_color:
+      - 255
+      - 150
+      - 48
+      xy_color:
+      - 0.57
+      - 0.389
+      is_deconz_group: false
+      icon: mdi:lightbulb-spot
+      friendly_name: Wandlamp bank 5
+      supported_features: 44
+      state: 'on'
+    light.wandlamp_bank_6:
+      min_color_temp_kelvin: 1538
+      max_color_temp_kelvin: 7142
+      min_mireds: 140
+      max_mireds: 650
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: color_temp
+      brightness: 191
+      color_temp_kelvin: 2288
+      color_temp: 437
+      hs_color:
+      - 29.496
+      - 80.799
+      rgb_color:
+      - 255
+      - 150
+      - 48
+      xy_color:
+      - 0.57
+      - 0.389
+      is_deconz_group: false
+      icon: mdi:lightbulb-spot
+      friendly_name: Wandlamp bank 6
+      supported_features: 44
+      state: 'on'
+  icon: mdi:lightbulb-group
+  metadata: {}
+- id: '1584519913913'
+  name: Dimmers maximaal
+  entities:
+    light.lamp_eettafel_1:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 254
+      is_deconz_group: false
+      friendly_name: Lamp eettafel 1
+      supported_features: 40
+      icon: mdi:ceiling-light
+      state: 'on'
+    light.lamp_eettafel_2:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 254
+      is_deconz_group: false
+      friendly_name: Lamp eettafel 2
+      supported_features: 40
+      icon: mdi:ceiling-light
+      state: 'on'
+    light.lamp_televisie:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 254
+      is_deconz_group: false
+      friendly_name: Lamp televisie
+      supported_features: 40
+      icon: mdi:lamp
+      state: 'on'
+    light.spot_eetkamer_1:
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 254
+      color_temp: 250
+      hs_color:
+      - 26.812
+      - 34.87
+      rgb_color:
+      - 255
+      - 205
+      - 166
+      xy_color:
+      - 0.421
+      - 0.364
+      is_deconz_group: false
+      friendly_name: Spot eetkamer 1
+      supported_features: 40
+      icon: mdi:spotlight-beam
+      state: 'on'
+    light.spot_eetkamer_2:
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 254
+      color_temp: 250
+      hs_color:
+      - 26.812
+      - 34.87
+      rgb_color:
+      - 255
+      - 205
+      - 166
+      xy_color:
+      - 0.421
+      - 0.364
+      is_deconz_group: false
+      friendly_name: Spot eetkamer 2
+      supported_features: 40
+      icon: mdi:spotlight-beam
+      state: 'on'
+    light.spot_eetkamer_3:
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 254
+      color_temp: 250
+      hs_color:
+      - 26.812
+      - 34.87
+      rgb_color:
+      - 255
+      - 205
+      - 166
+      xy_color:
+      - 0.421
+      - 0.364
+      is_deconz_group: false
+      friendly_name: Spot eetkamer 3
+      supported_features: 40
+      icon: mdi:spotlight-beam
+      state: 'on'
+    light.spot_eetkamer_4:
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 254
+      color_temp: 250
+      hs_color:
+      - 26.812
+      - 34.87
+      rgb_color:
+      - 255
+      - 205
+      - 166
+      xy_color:
+      - 0.421
+      - 0.364
+      is_deconz_group: false
+      friendly_name: Spot eetkamer 4
+      supported_features: 40
+      icon: mdi:spotlight-beam
+      state: 'on'
+    light.lamp_eettafel_3:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 254
+      is_deconz_group: false
+      friendly_name: Lamp eettafel 3
+      supported_features: 40
+      state: 'on'
+    light.spot_keuken_links:
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 254
+      color_temp: 250
+      hs_color:
+      - 26.812
+      - 34.87
+      rgb_color:
+      - 255
+      - 205
+      - 166
+      xy_color:
+      - 0.421
+      - 0.364
+      is_deconz_group: false
+      friendly_name: Spot keuken links
+      supported_features: 40
+      state: 'on'
+    light.spot_keuken_rechts:
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 254
+      color_temp: 250
+      hs_color:
+      - 26.812
+      - 34.87
+      rgb_color:
+      - 255
+      - 205
+      - 166
+      xy_color:
+      - 0.421
+      - 0.364
+      is_deconz_group: false
+      friendly_name: Spot keuken rechts
+      supported_features: 40
+      state: 'on'
+    light.bedverlichting:
+      supported_color_modes:
+      - brightness
+      icon: mdi:ceiling-light-multiple
+      friendly_name: Bedverlichting
+      supported_features: 32
+      color_mode: brightness
+      brightness: 255
+      state: 'on'
+    light.spotjes_slaapkamer:
+      supported_color_modes:
+      - brightness
+      icon: mdi:wall-sconce-flat
+      friendly_name: Slaapkamer
+      supported_features: 32
+      color_mode: brightness
+      brightness: 255
+      state: 'on'
+    light.ledstrip_bank:
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 254
+      color_temp: 140
+      hs_color:
+      - 235.086
+      - 6.526
+      rgb_color:
+      - 238
+      - 239
+      - 255
+      xy_color:
+      - 0.311
+      - 0.312
+      is_deconz_group: false
+      icon: mdi:led-strip-variant
+      friendly_name: Ledstrip bank
+      supported_features: 40
+      state: 'on'
+  metadata: {}
+- id: '1584519935671'
+  name: Film
+  entities:
+    light.lamp_bank_links:
+      brightness: 10
+      color_temp: 450
+      friendly_name: Lamp bank links
+      icon: mdi:floor-lamp
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    light.lamp_bank_rechts:
+      brightness: 10
+      color_temp: 450
+      friendly_name: Lamp bank rechts
+      icon: mdi:floor-lamp
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    light.lamp_eettafel_1:
+      friendly_name: Lamp eettafel 1
+      icon: mdi:ceiling-light
+      is_deconz_group: false
+      state: 'off'
+      supported_features: 41
+    light.lamp_eettafel_2:
+      friendly_name: Lamp eettafel 2
+      icon: mdi:ceiling-light
+      is_deconz_group: false
+      state: 'off'
+      supported_features: 41
+    light.lamp_televisie:
+      color_temp: 450
+      friendly_name: Lamp televisie
+      icon: mdi:lamp
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 43
+    light.spot_eetkamer_1:
+      brightness: 10
+      color_temp: 450
+      friendly_name: Spot eetkamer 1
+      icon: mdi:spotlight-beam
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    light.spot_eetkamer_2:
+      brightness: 10
+      color_temp: 450
+      friendly_name: Spot eetkamer 2
+      icon: mdi:spotlight-beam
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    light.spot_eetkamer_3:
+      brightness: 10
+      color_temp: 450
+      friendly_name: Spot eetkamer 3
+      icon: mdi:spotlight-beam
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    light.spot_eetkamer_4:
+      brightness: 10
+      color_temp: 450
+      friendly_name: Spot eetkamer 4
+      icon: mdi:spotlight-beam
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    light.spot_keuken_1:
+      brightness: 10
+      color_temp: 450
+      friendly_name: Spot keuken 1
+      icon: mdi:spotlight-beam
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+    light.spot_keuken_2:
+      brightness: 10
+      color_temp: 450
+      friendly_name: Spot keuken 2
+      icon: mdi:spotlight-beam
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+- id: '1585748116008'
+  name: Keuken maximaal
+  entities:
+    light.spot_keuken_links:
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 254
+      color_temp: 650
+      is_deconz_group: false
+      friendly_name: Spot keuken links
+      supported_features: 43
+      state: 'on'
+    light.spot_keuken_rechts:
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 254
+      color_temp: 650
+      is_deconz_group: false
+      friendly_name: Spot keuken rechts
+      supported_features: 43
+      state: 'on'
+- id: '1585748156107'
+  name: Keuken normaal
+  entities:
+    light.spot_keuken_links:
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 67
+      color_temp: 454
+      is_deconz_group: false
+      friendly_name: Spot keuken links
+      supported_features: 43
+      state: 'on'
+    light.spot_keuken_rechts:
+      min_mireds: 140
+      max_mireds: 650
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 67
+      color_temp: 454
+      is_deconz_group: false
+      friendly_name: Spot keuken rechts
+      supported_features: 43
+      state: 'on'
+- id: '1655928774445'
+  name: Dakterras - Wit licht
+  entities:
+    light.extended_color_light_16:
+      min_mireds: 140
+      max_mireds: 650
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      is_deconz_group: false
+      friendly_name: Hue Calla rechtsvoor
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 153
+      hs_color:
+      - 28.874
+      - 72.522
+      rgb_color:
+      - 255
+      - 159
+      - 70
+      xy_color:
+      - 0.546
+      - 0.389
+      color_temp: 400
+      state: 'on'
+    light.extended_color_light_17:
+      min_mireds: 140
+      max_mireds: 650
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      is_deconz_group: false
+      friendly_name: Hue Calla rechtsachter
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 153
+      hs_color:
+      - 28.874
+      - 72.522
+      rgb_color:
+      - 255
+      - 159
+      - 70
+      xy_color:
+      - 0.546
+      - 0.389
+      color_temp: 400
+      state: 'on'
+    light.extended_color_light_19:
+      min_mireds: 140
+      max_mireds: 650
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      is_deconz_group: false
+      friendly_name: Hue Calla linksachter
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 153
+      color_temp: 405
+      hs_color:
+      - 28.957
+      - 73.657
+      rgb_color:
+      - 255
+      - 157
+      - 67
+      xy_color:
+      - 0.551
+      - 0.389
+      state: 'on'
+    light.extended_color_light_21:
+      min_mireds: 140
+      max_mireds: 650
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      is_deconz_group: false
+      friendly_name: Hue Calla linksvoor
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 153
+      hs_color:
+      - 28.859
+      - 72.305
+      rgb_color:
+      - 255
+      - 159
+      - 70
+      xy_color:
+      - 0.546
+      - 0.389
+      color_temp: 399
+      state: 'on'
+  icon: mdi:lightbulb-group
+  metadata:
+    light.extended_color_light_16:
+      entity_only: false
+    light.extended_color_light_17:
+      entity_only: false
+    light.extended_color_light_19:
+      entity_only: false
+    light.extended_color_light_21:
+      entity_only: false
+- id: '1655929172516'
+  name: Dakterras - Kleur
+  entities:
+    light.extended_color_light_16:
+      min_mireds: 140
+      max_mireds: 650
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      is_deconz_group: false
+      friendly_name: Hue Calla rechtsvoor
+      supported_features: 44
+      color_mode: xy
+      brightness: 254
+      hs_color:
+      - 299.72
+      - 83.922
+      rgb_color:
+      - 254
+      - 41
+      - 255
+      xy_color:
+      - 0.3831
+      - 0.1589
+      state: 'on'
+    light.extended_color_light_17:
+      min_mireds: 140
+      max_mireds: 650
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      is_deconz_group: false
+      friendly_name: Hue Calla rechtsachter
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 254
+      hs_color:
+      - 28.859
+      - 72.305
+      rgb_color:
+      - 255
+      - 159
+      - 70
+      xy_color:
+      - 0.546
+      - 0.389
+      color_temp: 399
+      state: 'on'
+    light.extended_color_light_19:
+      min_mireds: 140
+      max_mireds: 650
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      is_deconz_group: false
+      friendly_name: Hue Calla linksachter
+      supported_features: 44
+      color_mode: xy
+      brightness: 254
+      hs_color:
+      - 318.028
+      - 83.529
+      rgb_color:
+      - 255
+      - 42
+      - 191
+      xy_color:
+      - 0.4737
+      - 0.2028
+      state: 'on'
+    light.extended_color_light_21:
+      min_mireds: 140
+      max_mireds: 650
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      is_deconz_group: false
+      friendly_name: Hue Calla linksvoor
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 254
+      hs_color:
+      - 28.909
+      - 72.995
+      rgb_color:
+      - 255
+      - 158
+      - 68
+      xy_color:
+      - 0.549
+      - 0.389
+      color_temp: 402
+      state: 'on'
+  icon: mdi:lightbulb-group
+  metadata:
+    light.extended_color_light_16:
+      entity_only: false
+    light.extended_color_light_17:
+      entity_only: false
+    light.extended_color_light_19:
+      entity_only: false
+    light.extended_color_light_21:
+      entity_only: false

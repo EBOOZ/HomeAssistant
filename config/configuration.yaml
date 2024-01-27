@@ -1,0 +1,412 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+  server_port: 443
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+#  ip_ban_enabled: true
+#  login_attempts_threshold: 3
+
+# Text to speech
+tts:
+  - platform: microsoft
+    api_key: *********************
+    language: nl-nl
+    type: ColetteNeural
+    region: westeurope
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+shell_command: !include_dir_named shell/
+
+homeassistant:
+  customize: !include customize.yaml
+  allowlist_external_dirs:
+    - /tmp
+  media_dirs:
+    media: /media/BlueIris
+#  auth_mfa_modules:
+#    - type: totp
+#      name: "Authenticator app"
+#    - type: notify
+#      message: "Use the following MFA code to login: {}"
+
+frontend:
+  themes: !include_dir_merge_named themes/
+  extra_module_url:
+    - /local/card-mod.js
+
+ios:
+  actions:
+    - name: Volume laag
+      label:
+        text: "Zet LMS volume op 25%"
+      icon:
+        icon: volume-low
+    - name: Volume medium
+      label:
+        text: "Zet LMS volume op 50%"
+      icon:
+        icon: volume-medium
+    - name: Volume hoog
+      label:
+        text: "Zet LMS volume op 80%"
+      icon:
+        icon: volume-high
+
+homekit:
+  filter:
+    include_domains:
+      - light
+      - climate
+      - cover
+      - fan
+    include_entities:
+      - binary_sensor.dakluik
+      - binary_sensor.slaapkamerraam
+      - binary_sensor.voordeur
+      - binary_sensor.rookmelder_woonkamer
+      - binary_sensor.rookmelder_boven
+      - binary_sensor.bewegingssensor_trap
+      - binary_sensor.bewegingssensor_gang
+      - binary_sensor.bewegingssensor_overloop
+      - binary_sensor.bewegingssensor_bureau
+      - sensor.slaapkamertemperatuur
+      - sensor.woonkamertemperatuur
+      - sensor.badkamertemperatuur
+      - sensor.buitentemperatuur
+      - sensor.werkplek_temperatuur
+      - sensor.lichtsensor_woonkamer
+      - sensor.lichtsensor_keuken
+      - sensor.lichtsensor_boven
+      - sensor.mi_air_purifier_3_3h_pm2_5
+      - person.danny
+      - switch.tuinverlichting
+      - switch.droger
+      - switch.wasmachine
+      - switch.vaatwasser
+      - switch.festivalverlichting
+      - switch.home_cinema
+      - switch.koffiezetapparaat
+      - switch.luchtverfrisser
+      - switch.werkplek
+      - input_boolean.switch_bedtime
+      - input_boolean.switch_sleepmode
+      - input_boolean.switch_homecinema
+      - input_boolean.thermostaat_programma
+      - remote.woonkamer
+    exclude_entities:
+      - light.unknown_1
+      - input_boolean.switch_somebodyhome
+      - light.verlichting_bank
+      - light.verlichting_eetkamer
+      - light.verlichting_eettafel
+      - light.verlichting_keuken
+      - light.verlichting_bed
+  entity_config:
+    media_player.woonkamer:
+      feature_list:
+        - feature: on_off
+        - feature: play_pause
+        - feature: play_stop
+        - feature: toggle_mute
+    media_player.keuken:
+      feature_list:
+        - feature: on_off
+        - feature: play_pause
+        - feature: play_stop
+        - feature: toggle_mute
+
+# Onkyo Receiver
+media_player:
+  - platform: onkyo
+    host: 192.168.0.13
+    name: 'Onkyo receiver'
+    receiver_max_volume: 100
+    sources:
+      pc: 'Computer'
+      cd: 'Radio'
+      game: 'XBOX'
+      tv: 'Televisie'
+      strm box: 'Apple TV'
+  
+stream:
+ffmpeg:
+
+sensor:
+  - platform: template
+    sensors:
+      humidity_average_boven:
+        friendly_name: "Gemiddelde luchtvochtigheid boven"
+        value_template: "{{ (float(states.sensor.slaapkamer_luchtvochtigheid.state) + float(states.sensor.werkplek_luchtvochtigheid.state) + float(states.sensor.logeerkamer_luchtvochtigheid.state)) / 3 | round(1) }}"
+        unique_id: sensor.luchtvochtigheid_boven
+  - platform: template
+    sensors:
+      smart_irrigation_hourly_netto_precipitation:
+        friendly_name: Smart Irrigation Netto Precipitation (updated hourly)
+        value_template: "{{state_attr('sensor.smart_irrigation_hourly_adjusted_run_time','netto_precipitation')}}"
+        icon_template: "mdi:sprinkler-variant"
+        #unit_of_measurement: mm # or inch if you're so inclined
+      smart_irrigation_bucket:
+        friendly_name: Smart Irrigation Bucket
+        value_template: "{{state_attr('sensor.smart_irrigation_daily_adjusted_run_time','bucket')}}"
+        icon_template: "mdi:sprinkler-variant"
+        #unit_of_measurement: mm # or inch if you're so inclined
+      smart_irrigation_next_runtime:
+        friendly_name: Smart Irrigation Next Runtime
+        value_template: "{{state_attr('sensor.smart_irrigation_daily_adjusted_run_time','adjusted_run_time_minutes')}}"
+        icon_template: "mdi:sprinkler-variant"
+        #unit_of_measurement: minutes # or inch if you're so inclined
+      oud_papier:
+        friendly_name: "Oud papier"
+        value_template: >-
+          {% if state_attr('sensor.afvalinfo_medemblik_papier', 'days_until_collection_date') == 0 -%}
+            Vandaag
+          {% elif state_attr('sensor.afvalinfo_medemblik_papier', 'days_until_collection_date') == 1 -%}
+            Morgen
+          {% else -%}
+            Over {{ state_attr('sensor.afvalinfo_medemblik_papier', 'days_until_collection_date') }} dagen
+          {%- endif %}
+        unique_id: sensor.oud_papier
+
+command_line:
+  - sensor:
+      command: python3 -c "import requests; import json; import random; dataRequest = requests.get('https://cdn-secure.buienalarm.nl/api/3.4/forecast.php?lat=52.77167&lon=5.10556&region=nl&unit=mm%2Fu&c='+str(random.randint(0,999999999999999)) ).text; dataRequest = dataRequest.replace('\r\n',' '); data = '{\"data\":'+dataRequest+'}';    print(data);"
+      name: Neerslag_Buienalarm_Regen_Data
+      json_attributes:
+        - data
+      value_template: 'last_changed: {{states.sensor.neerslag_buienalarm_regen_data.last_changed | default(now())}}'
+      scan_interval: 240
+
+rest_command:
+  mindergas_upload:
+    url: "https://www.mindergas.nl/api/meter_readings"
+    method: POST
+    headers:
+      content-type: application/json
+      AUTH-TOKEN: *********************
+    payload: '{ "date": "{{date}}", "reading": "{{reading}}" }'
+
+rest:
+  - scan_interval: 300
+    resource: https://api.tomtom.com/search/2/chargingAvailability.json
+    method: GET
+    params: { "chargingAvailability":"e87a33f4-8189-4a3d-a08b-1db20a063d01","key":"*********************" }
+    sensor:
+      - name: "Laadpaal Dam"
+        json_attributes_path: "connectors[0].availability.current"
+        value_template: 'OK'
+        json_attributes:
+          - available
+          - occupied
+          - reserved
+          - unknown
+          - outOfService
+      - name: "Laadpaal Dam (beschikbaar)"
+        value_template: '{{ states.sensor.laadpaal_dam.attributes["available"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Dam (bezet)"
+        value_template: '{{ states.sensor.laadpaal_dam.attributes["occupied"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Dam (gereserveerd)"
+        value_template: '{{ states.sensor.laadpaal_dam.attributes["reserved"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Dam (onbekend)"
+        value_template: '{{ states.sensor.laadpaal_dam.attributes["unknown"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Dam (defect)"
+        value_template: '{{ states.sensor.laadpaal_dam.attributes["outOfService"] }}'
+        icon: mdi:ev-station
+  - scan_interval: 300
+    resource: https://api.tomtom.com/search/2/chargingAvailability.json
+    method: GET
+    params: { "chargingAvailability":"39b6e5ba-b788-4685-9dc3-baecdea226cd","key":"*********************" }
+    sensor:
+      - name: "Laadpaal Breedstraat"
+        json_attributes_path: "connectors[0].availability.current"
+        value_template: 'OK'
+        json_attributes:
+          - available
+          - occupied
+          - reserved
+          - unknown
+          - outOfService
+      - name: "Laadpaal Breedstraat (beschikbaar)"
+        value_template: '{{ states.sensor.laadpaal_breedstraat.attributes["available"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Breedstraat (bezet)"
+        value_template: '{{ states.sensor.laadpaal_breedstraat.attributes["occupied"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Breedstraat (gereserveerd)"
+        value_template: '{{ states.sensor.laadpaal_breedstraat.attributes["reserved"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Breedstraat (onbekend)"
+        value_template: '{{ states.sensor.laadpaal_breedstraat.attributes["unknown"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Breedstraat (defect)"
+        value_template: '{{ states.sensor.laadpaal_breedstraat.attributes["outOfService"] }}'
+        icon: mdi:ev-station
+  - scan_interval: 300
+    resource: https://api.tomtom.com/search/2/chargingAvailability.json
+    method: GET
+    params: { "chargingAvailability":"8099adaf-0072-457f-af7f-ac55a3ebd787","key":"*********************" }
+    sensor:
+      - name: "Laadpaal Oude Haven"
+        json_attributes_path: "connectors[0].availability.current"
+        value_template: 'OK'
+        json_attributes:
+          - available
+          - occupied
+          - reserved
+          - unknown
+          - outOfService
+      - name: "Laadpaal Oude Haven (beschikbaar)"
+        value_template: '{{ states.sensor.laadpaal_oude_haven.attributes["available"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Oude Haven (bezet)"
+        value_template: '{{ states.sensor.laadpaal_oude_haven.attributes["occupied"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Oude Haven (gereserveerd)"
+        value_template: '{{ states.sensor.laadpaal_oude_haven.attributes["reserved"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Oude Haven (onbekend)"
+        value_template: '{{ states.sensor.laadpaal_oude_haven.attributes["unknown"] }}'
+        icon: mdi:ev-station
+      - name: "Laadpaal Oude Haven (defect)"
+        value_template: '{{ states.sensor.laadpaal_oude_haven.attributes["outOfService"] }}'
+        icon: mdi:ev-station
+
+input_boolean:
+  switch_bedtime:
+    name: Bedtijd
+    initial: off
+    icon: mdi:bed-empty
+  switch_sleepmode:
+    name: Slaapmodus
+    initial: off
+    icon: mdi:power-sleep
+  switch_somebodyhome:
+    name: Iemand thuis
+    initial: on
+    icon: mdi:motion-sensor
+  switch_homecinema:
+    name: Home Cinema beneden
+    initial: on
+    icon: mdi:theater
+
+light:
+  - platform: group
+    name: Verlichting eetkamer
+    entities:
+      - light.spot_eetkamer_1
+      - light.spot_eetkamer_2
+      - light.spot_eetkamer_3
+      - light.spot_eetkamer_4
+  - platform: group
+    name: Verlichting eettafel
+    entities:
+      - light.lamp_eettafel_1
+      - light.lamp_eettafel_2
+      - light.lamp_eettafel_3
+  - platform: group
+    name: Verlichting keuken
+    entities:
+      - light.spot_keuken_links
+      - light.spot_keuken_rechts
+  - platform: group
+    name: Verlichting bank (bovenkant)
+    entities:
+      - light.wandlamp_bank_4
+      - light.wandlamp_bank_5
+      - light.wandlamp_bank_6
+  - platform: group
+    name: Verlichting bank (onderkant)
+    entities:
+      - light.wandlamp_bank_1
+      - light.wandlamp_bank_2
+      - light.wandlamp_bank_3
+  - platform: group
+    name: Verlichting Hue dakterras
+    entities:
+      - light.hue_calla_linksachter
+      - light.hue_calla_linksvoor
+      - light.hue_calla_rechtsachter
+      - light.hue_calla_rechtsvoor
+
+notify:
+  - name: All
+    platform: group
+    services:
+      - service: mobile_app_iphone_van_danny
+      - service: mobile_app_iphone_11_van_miranda
+      - service: mobile_app_ipad_van_danny
+
+binary_sensor:
+  - platform: template
+    sensors:
+      lg_monitor:
+        friendly_name: "LG monitor"
+        device_class: connectivity
+        value_template: >-
+            {% if is_state("binary_sensor.teams_monitoring", "off") -%}
+              off
+            {% else %}
+              {{ states('binary_sensor.lg_monitor') }}
+            {% endif %}
+        icon_template: >-
+          {% if is_state("binary_sensor.teams_monitoring", "off") %}
+            mdi:monitor-off
+          {% endif %}
+        unique_id: binary_sensor.lg_monitor
+
+climate:
+- platform: gree
+  name: AC Slaapkamer
+  host: 192.168.0.110
+  mac: 'F4:91:1E:D1:64:9F'
+  target_temp_step: 1
+  temp_sensor: sensor.slaapkamertemperatuur
+  lights: input_boolean.ac_slaapkamer_lights
+  sleep: input_boolean.ac_slaapkamer_sleep
+  powersave: input_boolean.ac_slaapkamer_powersave
+
+mqtt:
+  cover:
+    - name: "Jaloezie links"
+      position_topic: "blinds/02:38:48:94:F3:74/position"
+      set_position_topic: "blinds/02:38:48:94:F3:74/set_position"
+      position_open: 0
+      position_closed: 100
+      qos: 0
+      state_open: "on"
+      state_closed: "off"
+      payload_open: "open"
+      payload_close: "close"
+      payload_stop: "stop"
+      retain: true
+      optimistic: false
+    - name: "Jaloezie rechts"
+      position_topic: "blinds/02:0B:D4:E6:7A:EF/position"
+      set_position_topic: "blinds/02:0B:D4:E6:7A:EF/set_position"
+      position_open: 0
+      position_closed: 100
+      qos: 0
+      state_open: "on"
+      state_closed: "off"
+      payload_open: "open"
+      payload_close: "close"
+      payload_stop: "stop"
+      retain: true
+      optimistic: false
+
+cover:
+  - platform: group
+    name: Jaloezieën woonkamer
+    entities:
+      - cover.jaloezie_links
+      - cover.jaloezie_rechts

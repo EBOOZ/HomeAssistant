@@ -1,0 +1,132 @@
+light.lamp_bank_links:
+  icon: mdi:floor-lamp
+light.lamp_bank_rechts:
+  icon: mdi:floor-lamp
+light.lamp_televisie:
+  icon: mdi:lamp
+light.lamp_eettafel_1:
+  icon: mdi:ceiling-light
+light.lamp_eettafel_2:
+  icon: mdi:ceiling-light
+light.lamp_gang:
+  icon: mdi:ceiling-light
+light.lamp_toilet:
+  icon: mdi:ceiling-light
+light.spot_eetkamer_1:
+  icon: mdi:spotlight-beam
+light.spot_eetkamer_2:
+  icon: mdi:spotlight-beam
+light.spot_eetkamer_3:
+  icon: mdi:spotlight-beam
+light.spot_eetkamer_4:
+  icon: mdi:spotlight-beam
+light.spot_keuken_1:
+  icon: mdi:spotlight-beam
+light.spot_keuken_2:
+  icon: mdi:spotlight-beam
+switch.on_off_plug_in_unit_1:
+  friendly_name: Logeerkamer
+  icon: mdi:power-socket-de
+switch.on_off_plug_in_unit_2:
+  friendly_name: Verlichting tuin
+  icon: mdi:lightbulb
+scene.alle_verlichting_beneden_normaal:
+  friendly_name: Normaal
+scene.alle_verlichting_beneden_warm:
+  friendly_name: Warm
+scene.verlichting_keuken_dimmers_koken:
+  friendly_name: Kookstand
+switch.mediacenter:
+  icon: mdi:laptop
+scene.verlichting_eettafel_maximaal:
+  friendly_name: Eettafel maximaal
+scene.alle_verlichting_beneden_film:
+  friendly_name: Film kijken
+switch.stopcontact_heater_logeerkamer:
+  friendly_name: Heater logeerkamer
+  icon: mdi:fan
+switch.stopcontact_home_cinema:
+  icon: mdi:power-socket-de
+switch.stopcontact_koffiezetapparaat:
+  friendly_name: Koffiezetapparaat
+  icon: mdi:coffee-maker
+switch.stopcontact_televisie_slaapkamer:
+  friendly_name: Televisie slaapkamer
+  icon: mdi:television
+person.danny:
+  entity_picture: https://ha.ebooz.nl/local/pictures/Danny.png
+person.miranda:
+  entity_picture: https://ha.ebooz.nl/local/pictures/Miranda.png
+switch.0b11000000818a0201040f70:
+  assumed_state: true
+  friendly_name: Deurbel
+  icon: mdi:bell
+light.verlichting_bank:
+  icon: mdi:floor-lamp
+light.verlichting_keuken:
+  icon: mdi:spotlight-beam
+light.verlichting_eetkamer:
+  icon: mdi:spotlight-beam
+light.verlichting_eettafel:
+  icon: mdi:vanity-light
+sensor.rookmelders_sensor_status:
+  friendly_name: Rookmelders
+  icon: mdi:smoke-detector
+sensor.afvalinfo_oud_papier:
+  friendly_name: Inzameling oud papier
+binary_sensor.router:
+  icon: mdi:router-wireless-settings
+binary_sensor.deco_m4_gang:
+  icon: mdi:access-point-network
+binary_sensor.deco_m4_keuken:
+  icon: mdi:access-point-network
+binary_sensor.deco_m4_overloop:
+  icon: mdi:access-point-network
+binary_sensor.squeezelite_woonkamer:
+  icon: mdi:speaker-wireless
+binary_sensor.squeezelite_logeerkamer:
+  icon: mdi:speaker-wireless
+cover.jaloezie_links:
+  device_class: shutter
+cover.jaloezie_rechts:
+  device_class: shutter
+cover.jaloezieen_woonkamer:
+  icon: mdi:window-shutter
+sensor.teams_status:
+  icon: mdi:chat-outline
+sensor.afvalinfo_papier:
+  friendly_name: Oud papier
+sensor.monthly_energy:
+  friendly_name: Stroom verbruik
+  icon: mdi:flash
+sensor.monthly_gas:
+  friendly_name: Gas verbruik
+  icon: mdi:fire
+sensor.daily_gas:
+  friendly_name: Gas verbruik
+  icon: mdi:fire
+sensor.daily_energy:
+  friendly_name: Stroom verbruik
+  icon: mdi:flash
+sensor.daily_energy_costs:
+  friendly_name: Stroom kosten
+  icon: mdi:flash
+sensor.daily_gas_costs:
+  friendly_name: Gas kosten
+  icon: mdi:fire
+sensor.monthly_energy_costs:
+  friendly_name: Stroom kosten
+  icon: mdi:flash
+sensor.monthly_gas_costs:
+  friendly_name: Gas kosten
+  icon: mdi:fire
+sensor.yearly_energy_costs:
+  friendly_name: Stroom kosten
+  icon: mdi:flash
+sensor.yearly_gas_costs:
+  friendly_name: Gas kosten
+  icon: mdi:fire
+binary_sensor.squeezelite_werkplek:
+  icon: mdi:speaker-wireless
+binary_sensor.squeezelite_keuken:
+  icon: mdi:speaker-wireless
