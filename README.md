@@ -9,7 +9,7 @@ I'm using Home Assistant for several years now and I'm sharing my setup and conf
 > If you came here by searching for building a 3D floorplan and integrate it in Home Assistant, you may want to go to the [floorplan](floorplan/README.md) folder immediately.
 
 # Hardware
-Starting with Home Assistant is easy, and you can already start by installing in on a RaspberryPi 4, or via their own Home Assistant Green. After I started with a RaspberryPi myself, I decided to purchase a second hand Intel NUC after a while to have better performance.
+Starting with Home Assistant is easy, and you can already start by installing in on a RaspberryPi 4, or via their own [Home Assistant Green](https://www.home-assistant.io/installation/). After I started with a RaspberryPi myself, I decided to purchase a second hand Intel NUC after a while to have better performance.
 * Processor: Intel Celeron N2820 (2,41Ghz)
 * Memory: 4GB DDR3L
 * Harddrive: 128GB SSD
@@ -57,14 +57,15 @@ Starting with Home Assistant is easy, and you can already start by installing in
 | Sun | |
 
 ## Community integrations via Home Assistant Community Store (HACS)
-| Integration | Description |
-| --- | --- |
-| Afvalinfo | Get's information about when garbage is picked up |
-| Browser mod | Used for the [floorplan](floorplan/README.md) tablet dashboard |
-| Eufy Security | Displays and controls all Eufy cameras |
-| Gree A/C | Controlling the airconditioning in the bedroom |
-| HACS | Communicty Add-on store | 
-| Smart Irrigation | Calculates how long the plants on the roof terrace need to be moistured |
-| TP-Link Omada | Integrating data from the home network which is based on TP-Link Omada |
-| Tronity | Get's data from the electric car | 
-| WebRTC Camera | Required for Eufy camera-streams to be displayed |
+| Integration | Description | Repository |
+| --- | --- | --- |
+| Afvalinfo | Get's information about when garbage is picked up | [link](https://github.com/heyajohnny/afvalinfo) |
+| Browser mod | Used for the [floorplan](floorplan/README.md) tablet dashboard | [link](https://github.com/thomasloven/hass-browser_mod) |
+| Eufy Security | Displays and controls all Eufy cameras | [link](https://github.com/fuatakgun/eufy_security) |
+| Gree A/C | Controlling the airconditioning in the bedroom | [link](https://github.com/RobHofmann/HomeAssistant-GreeClimateComponent) |
+| HACS | Communicty Add-on store | [link](https://github.com/hacs/integration) |
+| Smart Irrigation | Calculates how long the plants on the roof terrace need to be moistured | [link](https://github.com/jeroenterheerdt/HAsmartirrigation) |
+| TP-Link Omada | Integrating data from the home network which is based on TP-Link Omada | [link](https://github.com/zachcheatham/ha-omada) |
+| Tronity | Get's data from the electric car | [link](https://github.com/tronity/homeassistant) |
+| WebRTC Camera | Required for Eufy camera-streams to be displayed | [link](https://github.com/fuatakgun/WebRTC) |
+
