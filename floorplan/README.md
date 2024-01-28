@@ -16,8 +16,8 @@ These integrations are installed specifically to get to the desired end-state of
 | Integration | Description | Repository |
 | --- | --- | --- |
 | wallpanel | To display the floorplan fullscreen, without the top and side bars | [link](https://github.com/j-a-n/lovelace-wallpanel) |
-| browser_mod | Used to be able to pop-up cards | [link]( https://github.com/thomasloven/hass-browser_mod) |
-| card-mod | Enables my to modify CSS for ha-cards | [link]( https://github.com/thomasloven/lovelace-card-mod) |
+| browser_mod | Used to be able to pop-up cards (i.e. blinds, climate, and media) | [link]( https://github.com/thomasloven/hass-browser_mod) |
+| card-mod | Enables advanced CSS modification for ha-cards | [link]( https://github.com/thomasloven/lovelace-card-mod) |
 | button-card | For displaying animated icons and advanced CSS | [link]( https://github.com/custom-cards/button-card) |
 | clock-weather-card | Displays weather information in the top-right and bottom left| [link]( https://github.com/pkissling/clock-weather-card) |
 | neerslag-card | Shows the predicted rain fall for the next two hours | [link]( https://github.com/aex351/home-assistant-neerslag-card) |
