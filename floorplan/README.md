@@ -1,5 +1,5 @@
 # Floorplan
-This folder contains all materials to build up the 3D floorplan with the [picture elements](https://www.home-assistant.io/dashboards/picture-elements/) card as the foundation.
+This folder contains all materials to build up the 3D floorplan with the [picture elements](https://www.home-assistant.io/dashboards/picture-elements/) card as the foundation. Details about how the floorplan is built up in Home Assistant can be found in the [wiki](https://github.com/EBOOZ/HomeAssistant/wiki/3.-Floorplan).
 
 ## Tools
 I've used the following tools:
