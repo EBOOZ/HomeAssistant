@@ -31,6 +31,7 @@ scales: {
 },
 ```
 The result will be as follows:
+
 ![The Neerslag Card is looking way more clean then before](neerslag-card.png)
 
 You can use the code in this repository to replace the original JavaScript-module in Home Assistant!
