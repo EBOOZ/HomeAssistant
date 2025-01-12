@@ -6,6 +6,6 @@ Home Assistant is an open-source home automation platform that allows you to mon
 
 All detailed information about my setup is stored into the wiki:
 * [Introduction](https://github.com/EBOOZ/HomeAssistant/wiki/1.-Introduction)
-* [Use Cases](https://github.com/EBOOZ/HomeAssistant/wiki/2.-Use-cases)
+* [Frontend](https://github.com/EBOOZ/HomeAssistant/wiki/2.-Frontend)
 * [3D Floorplan](https://github.com/EBOOZ/HomeAssistant/wiki/3.-Floorplan)
-
+* [Use Cases](https://github.com/EBOOZ/HomeAssistant/wiki/4.-Use-cases)
